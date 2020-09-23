@@ -41,10 +41,12 @@ console.log(bombArr);
 let flag = 0;
 
 window.addEventListener(
+  //for removing default right click and
+  //changing to custome one
   "contextmenu",
   function (e) {
     if (flag === 1) return;
-	if (e.target.innerHTML === String.fromCodePoint(0x2757)) {
+    if (e.target.innerHTML === String.fromCodePoint(0x2757)) {
       e.target.innerHTML = "";
     } else {
       e.target.innerHTML = String.fromCodePoint(0x2757); //for excalmation emoji
@@ -76,12 +78,19 @@ function handleClick(event) {
       return;
     }
   }
+  updateScore(event);
   event.target.classList.add("normalCell");
-  updateScore();
+
   bombContainsNumber(x, event.target);
 }
 
-function updateScore() {
+function updateScore(event) {
+  let temp = event.target.classList.contains("normalCell");
+  //console.log(temp);
+  if (temp) {
+    //to check clicked already or not
+    return;
+  }
   score++;
   document.getElementById("score").innerHTML = "Score: " + score;
   if (score >= 72) {
