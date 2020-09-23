@@ -1,6 +1,5 @@
 # Minesweeper-Pro
-Question and Rules: 
-The game we designed in Bomberman-1 was all based on luck. Let's extend the same game with the same 9x9 grid and try to help our fellow users get a path to win. But how?
+Rules: 
 
 
 Whenever a user clicks on a cell he/she should be able to see a number based on the following conditions:
@@ -10,19 +9,6 @@ Calculate the number of bombs contained in that area.
 
 
 Display the number in the cell.
-
-
-
-One might think what about the cells at the extreme edges
-
-Worry Not!
-Consider the following images. These will help you consider various edge cases.
-
-
-
-
-
-
 
 
 How will it help?
