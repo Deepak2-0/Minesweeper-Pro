@@ -1,5 +1,5 @@
 # Minesweeper-Pro
-Question and Rules
+Question and Rules: 
 The game we designed in Bomberman-1 was all based on luck. Let's extend the same game with the same 9x9 grid and try to help our fellow users get a path to win. But how?
 
 
