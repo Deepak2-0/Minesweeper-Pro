@@ -44,7 +44,11 @@ window.addEventListener(
   "contextmenu",
   function (e) {
     if (flag === 1) return;
-    e.target.innerHTML = String.fromCodePoint(0x2757); //for excalmation emoji
+	if (e.target.innerHTML === String.fromCodePoint(0x2757)) {
+      e.target.innerHTML = "";
+    } else {
+      e.target.innerHTML = String.fromCodePoint(0x2757); //for excalmation emoji
+    }
     e.preventDefault();
   },
   false
