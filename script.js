@@ -115,7 +115,7 @@ function bombContainsNumber(x, el) {
   let countBombs = 0;
   let arr = [];
 
-  if (x === 1 || x === 9 || x === 73 || x === 81) {
+  if (x === 1) {
     arr.push(x + 1);
     arr.push(x + 9);
     arr.push(x + 10);
