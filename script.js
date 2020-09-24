@@ -46,11 +46,15 @@ window.addEventListener(
   "contextmenu",
   function (e) {
     if (flag === 1) return;
-    if (e.target.innerHTML === String.fromCodePoint(0x2757)) {
-      e.target.innerHTML = "";
+    if (e.target.classList.contains("normalCell")) {
+      e.preventDefault();
+      return;
+    } else if (e.target.innerHTML === String.fromCodePoint(0x2757)) {
+      e.target.innerHTML = ""; //remove flag
     } else {
       e.target.innerHTML = String.fromCodePoint(0x2757); //for excalmation emoji
     }
+    //playSound("flag");
     e.preventDefault();
   },
   false
@@ -73,6 +77,7 @@ function handleClick(event) {
       event.target.classList.add("bombCell");
       flag = 1;
       //console.log("got It");
+      playSound("wrong");
       popBombs();
       gameOver();
       return;
@@ -173,4 +178,8 @@ function bombContainsNumber(x, el) {
     }
   }
   el.innerHTML = countBombs;
+}
+function playSound(type) {
+  let audio = new Audio(`${type}.mp3`);
+  audio.play();
 }
